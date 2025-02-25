@@ -1,11 +1,11 @@
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
-import { BrowserRouter } from 'react-router-dom'
+import { createRoot } from 'react-dom/client';
+import './index.css';
+import App from './App.tsx';
+import { HashRouter } from 'react-router-dom'; // Use HashRouter for routing
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 createRoot(document.getElementById('root')!).render(
-  <BrowserRouter  basename="/vendor-app">
+  <HashRouter basename="">
     <App />
-  </BrowserRouter>
-)
+  </HashRouter>
+);
