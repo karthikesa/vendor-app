@@ -1,13 +1,12 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-
-import '../App.css'
+import '../App.css';
 import { Link } from 'react-router-dom';
+import { SignUpData } from './interface/interface';
 
 const Register = () => {
-
-  const [signUp, setSignUp] = useState({
+  const [signUp, setSignUp] = useState<SignUpData>({
     fname: '',
     lname: '',
     email: '',
@@ -15,7 +14,7 @@ const Register = () => {
     cpassword: '',
   });
 
-  const handleChange = (e :any) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setSignUp({
       ...signUp,
@@ -23,23 +22,22 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e :any) =>{
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log(signUp);
-    
-  }
+  };
 
   return (
     <div className="login-bg">
       <div className="form-container">
-        <h2 className='text-center'>Let’s Sign Up</h2>
+        <h2 className="text-center">Let’s Sign Up</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group className="mb-3" controlId="formBasicFname">
             <Form.Label>First Name</Form.Label>
             <Form.Control
               type="text"
               placeholder="Enter first name"
-              name='fname'
+              name="fname"
               value={signUp.fname}
               onChange={handleChange}
             />
@@ -50,7 +48,7 @@ const Register = () => {
             <Form.Control
               type="text"
               placeholder="Enter last name"
-              name='lname'
+              name="lname"
               value={signUp.lname}
               onChange={handleChange}
             />
@@ -61,7 +59,7 @@ const Register = () => {
             <Form.Control
               type="email"
               placeholder="Enter email"
-              name='email'
+              name="email"
               value={signUp.email}
               onChange={handleChange}
             />
@@ -72,7 +70,7 @@ const Register = () => {
             <Form.Control
               type="password"
               placeholder="Password"
-              name='password'
+              name="password"
               value={signUp.password}
               onChange={handleChange}
             />
@@ -83,7 +81,7 @@ const Register = () => {
             <Form.Control
               type="password"
               placeholder="Confirm Password"
-              name='cpassword'
+              name="cpassword"
               value={signUp.cpassword}
               onChange={handleChange}
             />
@@ -94,14 +92,14 @@ const Register = () => {
           </Form.Group>
 
           <div className="text-center">
-            <Button variant="primary" type="submit" className='text-end'>
+            <Button variant="primary" type="submit" className="text-end">
               Sign Up
             </Button>
           </div>
         </Form>
-        <div className='text-center'>
-          <p className="d-inline ">Already have an account?  </p>
-          <Link to='/'>Sign In </Link>
+        <div className="text-center">
+          <p className="d-inline ">Already have an account? </p>
+          <Link to="/">Sign In </Link>
         </div>
       </div>
     </div>
