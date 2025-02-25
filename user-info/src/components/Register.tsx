@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
@@ -15,7 +15,7 @@ const Register = () => {
     cpassword: '',
   });
 
-  const handleChange = (e) => {
+  const handleChange = (e :any) => {
     const { name, value } = e.target;
     setSignUp({
       ...signUp,
@@ -23,7 +23,7 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = (e :any) =>{
     e.preventDefault();
     console.log(signUp);
     

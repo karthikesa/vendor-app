@@ -12,7 +12,7 @@ const Login = () => {
     password: ''
   })
 
-  const handleChange = (e) => {
+  const handleChange = (e :any) => {
     const { name, value } = e.target; 
     setLoginData({
       ...loginData, 
@@ -21,7 +21,7 @@ const Login = () => {
 
   };
 
-  const handleSubmit =(e) =>{
+  const handleSubmit =(e :any) =>{
     e.preventDefault();
     console.log(loginData);
     
