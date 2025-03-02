@@ -1,5 +1,6 @@
 import Header from './headerComponent/Header';
 import { Carousel } from 'react-bootstrap';
+import Popular from './Popular';
 
 const Home = () => {
   return (
@@ -47,6 +48,10 @@ const Home = () => {
             </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
+      </div>
+
+      <div>
+        <Popular />
       </div>
     </div>
   )
